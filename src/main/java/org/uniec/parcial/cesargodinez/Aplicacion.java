@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "animal")
 
-public class Animal implements Serializable {
+public class Aplicacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,10 +39,10 @@ public class Animal implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
-    public Animal() {
+    public Aplicacion() {
     }
 
-    public Animal(Integer animalId) {
+    public Aplicacion(Integer animalId) {
         this.animalId = animalId;
     }
 
@@ -88,10 +88,10 @@ public class Animal implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Animal)) {
+        if (!(object instanceof Aplicacion)) {
             return false;
         }
-        Animal other = (Animal) object;
+        Aplicacion other = (Aplicacion) object;
         if ((this.animalId == null && other.animalId != null) || (this.animalId != null && !this.animalId.equals(other.animalId))) {
             return false;
         }

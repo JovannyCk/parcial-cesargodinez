@@ -1,4 +1,4 @@
-create table animal(
+create table (
 animal_id integer primary key auto_increment,
 nombre varchar(100),
 edad integer,

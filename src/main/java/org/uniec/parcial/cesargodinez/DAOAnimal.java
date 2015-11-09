@@ -26,22 +26,22 @@ public class DAOAnimal {
         sesion.close();
     }
 
-    public void guardar(Animal a)throws Exception{
+    public void guardar(Aplicacion a)throws Exception{
         sesion.save(a);
         cerrarTodo();
     }
-    public ArrayList<Animal> buscarTodos()throws Exception{
-        ArrayList<Animal>animales=(ArrayList<Animal>) sesion.createCriteria(Animal.class).list();
+    public ArrayList<Aplicacion> buscarTodos()throws Exception{
+        ArrayList<Aplicacion>animales=(ArrayList<Aplicacion>) sesion.createCriteria(Aplicacion.class).list();
         cerrarTodo();
         return animales;
     }
-    public Animal buscarPorId(Integer id)throws Exception{
-        Animal a= (Animal) sesion.createCriteria(Animal.class)
+    public Aplicacion buscarPorId(Integer id)throws Exception{
+        Aplicacion a= (Aplicacion) sesion.createCriteria(Aplicacion.class)
                 .add(Restrictions.idEq(id)).uniqueResult();
         cerrarTodo();
         return a;
     }
-    public void actalizar(Animal a)throws Exception{
+    public void actalizar(Aplicacion a)throws Exception{
         sesion.update(a);
         cerrarTodo();
     }
