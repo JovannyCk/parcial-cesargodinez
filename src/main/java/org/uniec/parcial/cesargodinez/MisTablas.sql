@@ -1,18 +1,29 @@
-create table (
-animal_id integer primary key auto_increment,
+create table cliente (
+id_cliente integer primary key auto_increment,
 nombre varchar(100),
-edad integer,
-fecha_nacimiento date);
+email varchar(100),
+paterno varchar(100));
 
-select * from animal;
-
-
-create table vuelo(
-id_avion integer,
-id_vuelo integer primary key auto_increment,
-origen varchar(180),
-destino varchar(180),
-foreign key(id_avion) references avion(id_avion));
+select * from cliente;
 
 
+create table tarjeta1 (
+id_tarjeta integer primary key auto_increment,
+id_cliente integer,
+nombre_tarjeta varchar(180),
+saldo float,
+numero_tarjeta integer,
+foreign key(id_cliente) references cliente(id_cliente));
 
+
+create table reservacion(
+id_reservacion integer primary key auto_increment,
+id_cliente integer,
+id_tarjeta integer,
+ciudad_destino varchar(120),
+nombre_hotel varchar(120),
+numero_personas integer,
+foreign key(id_cliente) references cliente (id_cliente),
+foreign key(id_tarjeta) references tarjeta1 (id_tarjeta));
+
+select * from reservacion;
